@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -15,12 +17,19 @@ class AbstractObject : public IAbstractObject
     long CalcSquare();
     void PrintSquare();
     void Print();
+    void SetName(string Name);
 
   private:
     Coordinate Position;
     vector<Coordinate> Vertex;
+    string name;
     int VertexCount;
 };
+
+void AbstractObject::SetName(string Name)
+{
+    name = Name;
+}
 
 AbstractObject::AbstractObject(int _VertexCount)
 {
@@ -81,7 +90,7 @@ void AbstractObject::PrintSquare()
 
 void AbstractObject::Print()
 {
-    cout << "This is AbstractObject.\n";
+    cout << "This is " << name << ".\n";
     cout << "Center coordinates: [X: " << Position.X << ", Y: " << Position.Y << "]\n";
     cout << "Vertexes: \n";
 

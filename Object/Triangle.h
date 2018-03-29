@@ -19,6 +19,7 @@ class Triangle
 Triangle::Triangle(Coordinate _Position, Coordinate VertexA, Coordinate VertexB, Coordinate VertexC)
 {
     _object.Move(_Position);
+    _object.SetName("Triangle");
     _object.SetVertexCoordinate(0, VertexA);
     _object.SetVertexCoordinate(1, VertexB);
     _object.SetVertexCoordinate(2, VertexC);
