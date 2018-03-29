@@ -6,9 +6,10 @@ using namespace std;
 int main(void)
 {
     Triangle MyTestTriangle;
-    MyTestTriangle.Move({50, 50});
-    MyTestTriangle.SetVertexCoordinate(0, {-25, -25});
-    MyTestTriangle.SetVertexCoordinate(1, {25, -25});
-    MyTestTriangle.SetVertexCoordinate(2, {0, 25});
+    MyTestTriangle.Move({0, 0});
+    MyTestTriangle.SetVertexCoordinate(0, {0, 0});
+    MyTestTriangle.SetVertexCoordinate(1, {0, 2});
+    MyTestTriangle.SetVertexCoordinate(2, {2, 0});
     MyTestTriangle.Print();
+    MyTestTriangle.PrintSquare();
 }
