@@ -1,14 +1,10 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
 #include "CoordinateStructure.h"
 #include "AbstractObject.h"
 
-class Triangle :public AbstractObject
+class Triangle 
 {
     public:
-        Triangle();
+        Triangle(Coordinate _Position, Coordinate VertexA, Coordinate VertexB, Coordinate VertexC);
         ~Triangle();
         void Move(Coordinate newPosition);
         void SetVertexCoordinate(int index, Coordinate newPosition);
@@ -17,75 +13,39 @@ class Triangle :public AbstractObject
         void Print();
 
     private:
-        Coordinate Position;
-        vector<Coordinate> Vertex;
-        int VertexCount;
+        AbstractObject _object = AbstractObject(3);
 };
 
-Triangle::Triangle()
+Triangle::Triangle(Coordinate _Position, Coordinate VertexA, Coordinate VertexB, Coordinate VertexC)
 {
-    Position = {0, 0};
-    VertexCount = 3;
-
-    for (int i = 0; i < VertexCount; i++) {
-        Vertex.push_back({0, 0});
-    }
+    _object.Move(_Position);
+    _object.SetVertexCoordinate(0, VertexA);
+    _object.SetVertexCoordinate(1, VertexB);
+    _object.SetVertexCoordinate(2, VertexC);
 }
 Triangle::~Triangle() {}
 
 void Triangle::Move(Coordinate newPosition)
 {
-    Position = newPosition;
-
-    for (int i = 0; i < VertexCount; i++)
-    {
-        Vertex[i].X += newPosition.X;
-        Vertex[i].Y += newPosition.Y;
-    }
+    _object.Move(newPosition);
 }
 
 void Triangle::SetVertexCoordinate(int index, Coordinate newPosition)
 {
-    Vertex[index].X = Position.X + newPosition.X;
-    Vertex[index].Y = Position.Y + newPosition.Y;
+    _object.SetVertexCoordinate(index, newPosition);
 }
 
 long Triangle::CalcSquare()
 {
-    int Square = 0;
-
-    int x1 = Vertex[0].X;
-    int y1 = Vertex[0].Y;
-
-    for (int i = 1; i < VertexCount; i++)
-    {
-        int x2 = Vertex[i].X;
-        int y2 = Vertex[i].Y;
-
-        Square = Square + ((x1 + x2) * (y2 - y1));
-
-        x1 = x2;
-        y1 = y2;
-    }
-
-    Square = Square + ((Vertex[0].X + x1) * (Vertex[0].Y - y1));
-
-    return abs(Square / 2);
+    return _object.CalcSquare();
 }
 
 void Triangle::PrintSquare()
 {
-    cout << "Square is: " << CalcSquare() << "\n";
+    _object.PrintSquare();
 }
 
 void Triangle::Print()
 {
-    cout << "This is triangle.\n";
-    cout << "Center coordinates: [X: " << Position.X << ", Y: " << Position.Y << "]\n";
-    cout << "Vertexes: \n";
-
-    for (int i = 0; i < VertexCount; i++)
-    {
-        cout << "    " << i << " : [X: " << Vertex[i].X << ", Y: " << Vertex[i].Y << "]\n";
-    }
+    _object.Print();
 }
