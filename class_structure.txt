@@ -2,9 +2,9 @@ AbstractObject (Move[int X, int Y])
     Triangle
     Pentagon
 
-AbstractFabric (GetObject)
-    AbstractTriangleFabric
-    AbstractPentagonFabric
+Fabrics
+    AbstractTriangleFabric (GetObject)
+    AbstractPentagonFabric (GetObject)
 
 AbstractStorage (Compare[AbstractObject T1, AbstractObject T2])
     TrianglePentagonStorage

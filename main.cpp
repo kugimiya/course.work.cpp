@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
 
-#include "Object/Triangle.h"
-#include "Object/Pentagon.h"
+#include "Fabric/AbstractTriangleFabric.h"
+#include "Fabric/AbstractPentagonFabric.h"
 
 int main(void)
 {
-    Triangle MyTestTriangle = Triangle({0, 0}, {0, 0}, {0, 2}, {2, 0});
+    Triangle MyTestTriangle = AbstractTriangleFabric::GetObject();
     MyTestTriangle.Print();
     MyTestTriangle.PrintSquare();
 
-    Pentagon MyTestPentagon = Pentagon({10, 10}, {0, -3}, {3, 0}, {2, 4}, {-2, 4}, {-3, 0});
+    Pentagon MyTestPentagon = AbstractPentagonFabric::GetObject();
     MyTestPentagon.Print();
     MyTestPentagon.PrintSquare();
 }
