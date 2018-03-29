@@ -1,0 +1,13 @@
+AbstractObject (Move[int X, int Y])
+    Triangle
+    Pentagon
+
+AbstractFabric (GetObject)
+    AbstractTriangleFabric
+    AbstractPentagonFabric
+
+AbstractStorage (Compare[AbstractObject T1, AbstractObject T2])
+    TrianglePentagonStorage
+
+AbstractComparator (Compare[N&, M&])
+    SquareComparator
