@@ -1,34 +1,11 @@
-#include <c++/6/iostream>
+#include <iostream>
 using namespace std;
 
-class TestClass
-{
-    public:
-        TestClass() {};
-        void TestShout();
-};
-
-void TestClass::TestShout()
-{
-    cout << " сложно чото \n";
-}
-
-
-class TestClassFabric
-{
-    public:
-        static TestClass getInstance();
-};
-
-TestClass TestClassFabric::getInstance()
-{
-    return TestClass();
-}
-
+#include "Object/Triangle.h"
 
 int main(void)
 {
-    TestClass TestClassInstance = TestClassFabric::getInstance();
-    TestClassInstance.TestShout();
-    return 0;
+    Triangle MyTestTriangle;
+    MyTestTriangle.Move(10, 50);
+    MyTestTriangle.Print();
 }
