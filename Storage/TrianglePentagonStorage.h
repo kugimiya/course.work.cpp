@@ -1,8 +1,8 @@
 #pragma once
 
 #include "IAbstractStorage.h"
-#include "../Fabric/AbstractTriangleFabric.h"
-#include "../Fabric/AbstractPentagonFabric.h"
+#include "../Fabric/TriangleFabric.h"
+#include "../Fabric/PentagonFabric.h"
 
 class TrianglePentagonStorage : public IAbstractStorage
 {
@@ -11,8 +11,8 @@ class TrianglePentagonStorage : public IAbstractStorage
     ~TrianglePentagonStorage() {}
     virtual bool Compare();
 
-    Triangle _Triangle = AbstractTriangleFabric::GetObject();
-    Pentagon _Pentagon = AbstractPentagonFabric::GetObject();
+    Triangle _Triangle = TriangleFabric::GetObject();
+    Pentagon _Pentagon = PentagonFabric::GetObject();
 };
 
 bool TrianglePentagonStorage::Compare()

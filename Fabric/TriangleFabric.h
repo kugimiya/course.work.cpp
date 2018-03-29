@@ -2,15 +2,15 @@
 
 #include "../Object/Triangle.h"
 
-class AbstractTriangleFabric
+class TriangleFabric
 {
   public:
-    AbstractTriangleFabric() {}
-    ~AbstractTriangleFabric() {}
+    TriangleFabric() {}
+    ~TriangleFabric() {}
     static Triangle GetObject();
 };
 
-Triangle AbstractTriangleFabric::GetObject()
+Triangle TriangleFabric::GetObject()
 {
     Triangle DummyTriangle = Triangle({0, 0}, {0, 0}, {0, 2}, {2, 0});
     return DummyTriangle;
