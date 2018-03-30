@@ -3,6 +3,7 @@
 #include "IAbstractStorage.h"
 #include "../Fabric/TriangleFabric.h"
 #include "../Fabric/PentagonFabric.h"
+#include "../Comparator/SquareComparator.h"
 
 class TrianglePentagonStorage : public IAbstractStorage
 {
@@ -17,5 +18,8 @@ class TrianglePentagonStorage : public IAbstractStorage
 
 bool TrianglePentagonStorage::Compare()
 {
-
+  return SquareComparator::Compare(
+    _Triangle.CalcSquare(),
+    _Pentagon.CalcSquare()
+  );
 }
