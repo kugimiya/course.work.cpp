@@ -1,12 +1,7 @@
-#include <iostream>
-using namespace std;
-
-#include "Storage/TrianglePentagonStorage.h"
+#include "Application/Application.h"
 
 int main(void)
 {
-    TrianglePentagonStorage Core;
-    Core._Pentagon.Print();
-
-    cout << "Comparison: " << Core.Compare() << "\n";
+    Application App;
+    App.Init();
 }

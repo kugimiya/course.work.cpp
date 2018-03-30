@@ -90,7 +90,7 @@ void AbstractObject::PrintSquare()
 
 void AbstractObject::Print()
 {
-    cout << "This is " << name << ".\n";
+    cout << "\nThis is " << name << ".\n";
     cout << "Center coordinates: [X: " << Position.X << ", Y: " << Position.Y << "]\n";
     cout << "Vertexes: \n";
 
