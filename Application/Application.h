@@ -42,8 +42,35 @@ void Application::Start()
     while (main_prompt != "4") {
         main_prompt = _Menu.CallPrompt("action");
 
+        // move object
         if (main_prompt == "1") {
-            // move object
+            string selected_object = _Menu.CallPrompt("choose_object");
+            
+            // move triangle
+            if (selected_object == "1") {
+                int x, y;
+
+                cout << "> Input X: ";
+                cin >> x;
+                cout << "/n>Input Y: ";
+                cin >> y;
+
+                Storage._Triangle.Move({x, y});
+                Storage._Triangle.Print();
+            }
+
+            // move pentagon
+            if (selected_object == "2") {
+                int x, y;
+
+                cout << "> Input X: ";
+                cin >> x;
+                cout << "/n>Input Y: ";
+                cin >> y;
+
+                Storage._Pentagon.Move({x, y});
+                Storage._Pentagon.Print();
+            }
         }
 
         if (main_prompt == "1a") {
@@ -58,6 +85,8 @@ void Application::Start()
 
         if (main_prompt == "3") {
             // print comparison
+            Storage._Triangle.PrintSquare();
+            Storage._Pentagon.PrintSquare();
         }
     }
 }

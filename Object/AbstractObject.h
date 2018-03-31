@@ -85,7 +85,7 @@ long AbstractObject::CalcSquare()
 
 void AbstractObject::PrintSquare()
 {
-    cout << "Square is: " << CalcSquare() << "\n";
+    cout << name << " square is: " << CalcSquare() << "\n";
 }
 
 void AbstractObject::Print()
