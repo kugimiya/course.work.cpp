@@ -25,5 +25,9 @@ void Application::Init()
         {"Quit", "q", "4"}
     });
 
-    _Menu.CallPrompt("action");
+    string action = _Menu.CallPrompt("action");
+
+    if (action == "q") {
+        exit;
+    }
 }
