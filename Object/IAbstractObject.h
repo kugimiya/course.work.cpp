@@ -6,8 +6,8 @@
 class IAbstractObject
 {
   public:
-    IAbstractObject();
-    virtual ~IAbstractObject();
+    IAbstractObject() = default;
+    virtual ~IAbstractObject() = default;
     virtual void Move(Coordinate newPosition) = 0;
 
     virtual void SetVertexCoordinate(int index, Coordinate newPosition) = 0;
@@ -18,6 +18,3 @@ class IAbstractObject
 
     virtual void SetName(string Name) = 0;
 };
-
-IAbstractObject::IAbstractObject() {}
-IAbstractObject::~IAbstractObject() {}
