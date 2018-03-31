@@ -8,18 +8,10 @@
 class TrianglePentagonStorage : public IAbstractStorage
 {
   public:
-    TrianglePentagonStorage() {}
-    ~TrianglePentagonStorage() {}
+    TrianglePentagonStorage() = default;
+    ~TrianglePentagonStorage() = default;
     virtual bool Compare();
 
     Triangle _Triangle = TriangleFabric::GetObject();
     Pentagon _Pentagon = PentagonFabric::GetObject();
 };
-
-bool TrianglePentagonStorage::Compare()
-{
-  return SquareComparator::Compare(
-    _Triangle.CalcSquare(),
-    _Pentagon.CalcSquare()
-  );
-}
