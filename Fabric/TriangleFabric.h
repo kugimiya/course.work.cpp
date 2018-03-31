@@ -5,13 +5,7 @@
 class TriangleFabric
 {
   public:
-    TriangleFabric() {}
-    ~TriangleFabric() {}
+    TriangleFabric() = default;
+    ~TriangleFabric() = default;
     static Triangle GetObject();
 };
-
-Triangle TriangleFabric::GetObject()
-{
-    Triangle DummyTriangle = Triangle({0, 0}, {0, 0}, {0, 2}, {2, 0});
-    return DummyTriangle;
-}
