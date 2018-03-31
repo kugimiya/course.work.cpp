@@ -1,6 +1,6 @@
 #include "AbstractObject.h"
 
-void AbstractObject::SetName(string Name)
+void AbstractObject::SetName(std::string Name)
 {
     name = Name;
 }
@@ -59,17 +59,17 @@ long AbstractObject::CalcSquare()
 
 void AbstractObject::PrintSquare()
 {
-    cout << name << " square is: " << CalcSquare() << "\n";
+    std::cout << name << " square is: " << CalcSquare() << "\n";
 }
 
 void AbstractObject::Print()
 {
-    cout << "\nThis is " << name << ".\n";
-    cout << "Center coordinates: [X: " << Position.X << ", Y: " << Position.Y << "]\n";
-    cout << "Vertexes: \n";
+    std::cout << "\nThis is " << name << ".\n";
+    std::cout << "Center coordinates: [X: " << Position.X << ", Y: " << Position.Y << "]\n";
+    std::cout << "Vertexes: \n";
 
     for (int i = 0; i < VertexCount; i++)
     {
-        cout << "    " << i << " : [X: " << Vertex[i].X << ", Y: " << Vertex[i].Y << "]\n";
+        std::cout << "    " << i << " : [X: " << Vertex[i].X << ", Y: " << Vertex[i].Y << "]\n";
     }
 }

@@ -2,28 +2,27 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
 typedef struct {
-    string Name;
-    string Code;
-    string ReturnValue;
+    std::string Name;
+    std::string Code;
+    std::string ReturnValue;
 } Option;
 
 typedef struct {
-    string PromptName;
-    string PromptText;
-    vector<Option> Options;
+    std::string PromptName;
+    std::string PromptText;
+    std::vector<Option> Options;
 } Prompt;
 
 class Menu
 {
     public:
         Menu() = default;
-        void AggregatePrompt(string PromptName, string PromptText);
-        void AddPromptOptions(string PromptName, vector<Option> _Options);
-        string CallPrompt(string PromptName);
+        void AggregatePrompt(std::string PromptName, std::string PromptText);
+        void AddPromptOptions(std::string PromptName, std::vector<Option> _Options);
+        std::string CallPrompt(std::string PromptName);
 
-      private:
-        vector<Prompt> Prompts;
+        private:
+            std::vector<Prompt> Prompts;
 };

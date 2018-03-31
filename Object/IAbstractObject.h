@@ -16,5 +16,5 @@ class IAbstractObject
     virtual void PrintSquare() = 0;
     virtual void Print() = 0;
 
-    virtual void SetName(string Name) = 0;
+    virtual void SetName(std::string Name) = 0;
 };

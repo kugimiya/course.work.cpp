@@ -26,7 +26,7 @@ void Application::Init()
 
 void Application::Start()
 {
-    string main_prompt = "";
+    std::string main_prompt = "";
 
     while (main_prompt != "4")
     {
@@ -35,7 +35,7 @@ void Application::Start()
         // move object
         if (main_prompt == "1")
         {
-            string selected_object = _Menu.CallPrompt("choose_object");
+            std::string selected_object = _Menu.CallPrompt("choose_object");
 
             // move triangle
             if (selected_object == "1")
@@ -56,8 +56,8 @@ void Application::Start()
         {
             // move vertex
 
-            string selected_object = _Menu.CallPrompt("choose_object");
-            string vertex = _Menu.CallPrompt("choose_vertex");
+            std::string selected_object = _Menu.CallPrompt("choose_object");
+            std::string vertex = _Menu.CallPrompt("choose_vertex");
             int index = stoi(vertex);
 
             // move one of vertex of triangle
@@ -98,10 +98,10 @@ Coordinate Application::AskCoordinates()
 {
     int x, y;
 
-    cout << "> Input X: ";
-    cin >> x;
-    cout << "/n>Input Y: ";
-    cin >> y;
+    std::cout << "> Input X: ";
+    std::cin >> x;
+    std::cout << "/n>Input Y: ";
+    std::cin >> y;
 
     return {x, y};
 }

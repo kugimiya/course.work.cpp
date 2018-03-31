@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
 #include "CoordinateStructure.h"
 #include "IAbstractObject.h"
@@ -17,11 +16,11 @@ class AbstractObject : public IAbstractObject
     long CalcSquare();
     void PrintSquare();
     void Print();
-    void SetName(string Name);
+    void SetName(std::string Name);
 
   private:
     Coordinate Position;
-    vector<Coordinate> Vertex;
-    string name;
+    std::vector<Coordinate> Vertex;
+    std::string name;
     int VertexCount;
 };
