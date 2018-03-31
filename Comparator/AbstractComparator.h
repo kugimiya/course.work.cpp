@@ -3,8 +3,8 @@
 class IComparator
 {
     public:
-        IComparator() {}
-        ~IComparator() {}
+        IComparator() = default;
+        ~IComparator() = default;
 
         virtual bool Compare() = 0;
 };
