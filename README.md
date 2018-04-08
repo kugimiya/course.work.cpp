@@ -17,7 +17,7 @@
 - Клонируешь репо
 - Открываешь терминал
 - `cd %подставь сюда путь до репо%`
-- `make dev`
+- `make`
 
 ## Не собирается!
 `sudo apt install build-essential g++ make`
